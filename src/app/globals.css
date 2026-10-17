@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-green-950: #071c14;
+  --color-brand-green-900: #0b2a1f;
+  --color-brand-green-800: #0f3e2e;
+  --color-brand-green-700: #165640;
+  --color-brand-green-600: #1d7254;
+  --color-brand-green-100: #e2ede7;
+  --color-brand-green-50: #f2f8f5;
+
+  --color-brand-gold-600: #b89326;
+  --color-brand-gold-500: #d4af37;
+  --color-brand-gold-400: #e5c55a;
+  --color-brand-gold-300: #f3dc8e;
+  --color-brand-gold-100: #fcf7e6;
+
+  --color-brand-cream: #fbf9f5;
+  --color-brand-cream-card: #ffffff;
+  --color-brand-charcoal: #1a201c;
+  --color-brand-muted: #5a6660;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #fbf9f5;
+  --foreground: #1a201c;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom subtle gold and emerald gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f6e08c 50%, #b89326 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-gradient-bg {
+  background: linear-gradient(135deg, #0b2a1f 0%, #0f3e2e 60%, #165640 100%);
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #d4af37 0%, #e5c55a 60%, #b89326 100%);
+}
+
+.glass-nav {
+  background: rgba(11, 42, 31, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
