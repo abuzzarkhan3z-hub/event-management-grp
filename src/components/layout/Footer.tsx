@@ -28,7 +28,7 @@ export default function Footer() {
                 <Sparkles className="w-5 h-5" />
               </div>
               <span className="text-xl font-serif font-bold text-white tracking-wide">
-                Abu Maaz Events
+                Abu Maa&apos;s Events
               </span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">

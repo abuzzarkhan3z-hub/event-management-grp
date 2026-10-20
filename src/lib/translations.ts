@@ -2,7 +2,7 @@ export type Language = "en" | "hi";
 
 export const translations = {
   en: {
-    brand_name: "Abu Maaz Event Management",
+    brand_name: "Abu Maa's Event Management",
     brand_subtitle: "Bulk Catering & Kirana Supply",
     nav_home: "Home",
     nav_about: "About Us",
@@ -41,14 +41,14 @@ export const translations = {
     approx_estimate: "Approximate Estimate",
     disclaimer: "Final quotation will be verified and customized by our team.",
     
-    footer_address_title: "Abu Maaz Event Group",
+    footer_address_title: "Abu Maa's Event Group",
     footer_address: "Nasruddin Market, Badi Masjid Road, Jamalpur, Aligarh (U.P.)",
     footer_quick_links: "Quick Navigation",
     footer_services: "Our Specialties",
-    footer_copyright: "© 2026 Abu Maaz Event Management Group. All rights reserved.",
+    footer_copyright: "© 2026 Abu Maa's Event Management Group. All rights reserved.",
   },
   hi: {
-    brand_name: "अबू माअज़ इवेंट मैनेजमेंट",
+    brand_name: "अबू मा'स इवेंट मैनेजमेंट",
     brand_subtitle: "थोक कैटरिंग एवं किराना सप्लाई",
     nav_home: "होम",
     nav_about: "हमारे बारे में",
@@ -87,10 +87,10 @@ export const translations = {
     approx_estimate: "अनुमानित लागत",
     disclaimer: "अंतिम कोटेशन हमारी टीम द्वारा चर्चा के बाद तय किया जाएगा।",
     
-    footer_address_title: "अबू माअज़ इवेंट ग्रुप",
+    footer_address_title: "अबू मा'स इवेंट ग्रुप",
     footer_address: "नसरुद्दीन मार्केट, बड़ी मस्जिद रोड, जमालपुर, अलीगढ़ (उ.प्र.)",
     footer_quick_links: "त्वरित लिंक्स",
     footer_services: "हमारी सेवाएं",
-    footer_copyright: "© 2026 अबू माअज़ इवेंट मैनेजमेंट ग्रुप। सर्वाधिकार सुरक्षित।",
+    footer_copyright: "© 2026 अबू मा'स इवेंट मैनेजमेंट ग्रुप। सर्वाधिकार सुरक्षित।",
   },
 } as const;

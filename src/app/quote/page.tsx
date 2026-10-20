@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { SAMPLE_PACKAGES } from "@/lib/sampleData";
 import { formatINR } from "@/lib/utils";
-import { Calculator, CheckCircle, Sparkles, Send, PhoneCall } from "lucide-react";
+import { Calculator, CheckCircle, Sparkles, Send, PhoneCall, Loader2, AlertCircle } from "lucide-react";
+import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 
 export default function QuoteCalculatorPage() {
   const { language } = useLanguage();
@@ -19,6 +20,8 @@ export default function QuoteCalculatorPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [contact, setContact] = useState({ name: "", phone: "", date: "", city: "" });
 
   const activePackage = SAMPLE_PACKAGES.find((p) => p.id === selectedPackageId) || SAMPLE_PACKAGES[0];
@@ -46,9 +49,42 @@ export default function QuoteCalculatorPage() {
   const lowerEstimate = Math.round(grandTotal * 0.95);
   const upperEstimate = Math.round(grandTotal * 1.05);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      if (isSupabaseConfigured()) {
+        const selectedAddonLabels = Object.entries(addOns)
+          .filter(([_, checked]) => checked)
+          .map(([key]) => addOnPrices[key]?.label_en)
+          .join(", ");
+
+        const notes = `Estimated: ${formatINR(lowerEstimate)} - ${formatINR(upperEstimate)} | Package: ${activePackage.name} (${formatINR(activePackage.price_per_plate)}/plate) | Guests: ${guestCount} | Add-ons: ${selectedAddonLabels || "None"}`;
+
+        const { error } = await (supabase.from("enquiries") as any).insert({
+          name: contact.name,
+          phone: contact.phone,
+          event_type: eventType as any,
+          event_date: contact.date || null,
+          guests: guestCount,
+          city: contact.city || null,
+          message: notes,
+          source: "quote_calculator",
+          status: "new",
+        });
+
+        if (error) throw error;
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error("Quote submit error:", err);
+      setErrorMessage(err.message || "Failed to submit estimate request.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -199,14 +235,31 @@ export default function QuoteCalculatorPage() {
                 </div>
                 <h4 className="font-serif font-bold text-lg text-white">Estimate Sent!</h4>
                 <p className="text-xs text-gray-300">
-                  Our team will contact {contact.phone} on WhatsApp with the finalized itemized quotation.
+                  Your quote calculation has been saved in Abu Maa&apos;s management system. Our team will contact {contact.phone} on WhatsApp with the finalized itemized quotation.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setContact({ name: "", phone: "", date: "", city: "" });
+                  }}
+                  className="text-xs text-[#d4af37] underline pt-2 block mx-auto"
+                >
+                  Calculate Another Estimate
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
                 <p className="text-xs text-gray-300 font-medium">
                   Enter your details to receive an official PDF quotation on WhatsApp:
                 </p>
+
+                {errorMessage && (
+                  <div className="p-2.5 rounded-lg bg-rose-500/20 text-rose-200 text-xs flex items-center gap-2 border border-rose-500/40">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{errorMessage}</span>
+                  </div>
+                )}
 
                 <div>
                   <input
@@ -249,9 +302,20 @@ export default function QuoteCalculatorPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-xl font-bold text-xs text-[#0b2a1f] gold-gradient-bg shadow-md hover:brightness-105 active:scale-95 transition-all flex items-center justify-center gap-2 mt-4"
+                  disabled={isSubmitting}
+                  className="w-full py-3 rounded-xl font-bold text-xs text-[#0b2a1f] gold-gradient-bg shadow-md hover:brightness-105 active:scale-95 transition-all flex items-center justify-center gap-2 mt-4 disabled:opacity-60"
                 >
-                  <Send className="w-4 h-4 text-[#0b2a1f]" /> Send Estimate To Abu Maaz Desk
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin text-[#0b2a1f]" />
+                      <span>Saving Estimate...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 text-[#0b2a1f]" />
+                      <span>Send Estimate To Abu Maa&apos;s Desk</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}

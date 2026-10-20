@@ -91,7 +91,7 @@ export default function FAQPage() {
         </h3>
         <p className="text-xs text-gray-300">
           {language === "en"
-            ? "Abu Maaz management is always available to speak with you directly on phone or WhatsApp."
+            ? "Abu Maa's management is always available to speak with you directly on phone or WhatsApp."
             : "हमारी टीम से सीधे बात करने के लिए कॉल या व्हाट्सएप करें।"}
         </p>
         <div className="pt-2 flex justify-center gap-3">

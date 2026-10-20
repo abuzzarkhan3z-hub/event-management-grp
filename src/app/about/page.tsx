@@ -16,12 +16,12 @@ export default function AboutPage() {
           {language === "en" ? "Our Legacy & Heritage" : "हमारी विरासत और परंपरा"}
         </span>
         <h1 className="text-3xl sm:text-5xl font-serif font-bold text-[#0b2a1f]">
-          {language === "en" ? "The Abu Maaz Story" : "अबू माअज़ की कहानी"}
+          {language === "en" ? "The Abu Maa's Story" : "अबू मा'स की कहानी"}
         </h1>
         <p className="text-base text-gray-600 leading-relaxed">
           {language === "en"
-            ? "Founded with an unwavering passion for authentic Awadhi and Mughlai culinary craftsmanship, Abu Maaz Event Management Group has been the region's trusted host for over 15 years."
-            : "पारंपरिक स्वाद और शुद्धता के प्रति समर्पण के साथ स्थापित, अबू माअज़ इवेंट ग्रुप पिछले 15 वर्षों से शादी-ब्याह और समारोहों का विश्वसनीय नाम है।"}
+            ? "Founded with an unwavering passion for authentic Awadhi and Mughlai culinary craftsmanship, Abu Maa's Event Management Group has been the region's trusted host for over 15 years."
+            : "पारंपरिक स्वाद और शुद्धता के प्रति समर्पण के साथ स्थापित, अबू मा'स इवेंट ग्रुप पिछले 15 वर्षों से शादी-ब्याह और समारोहों का विश्वसनीय नाम है।"}
         </p>
       </div>
 

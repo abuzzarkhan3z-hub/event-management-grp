@@ -52,7 +52,7 @@ export default function HomePage() {
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#d4af37]/50 bg-[#071c14]/60 text-xs sm:text-sm font-medium text-[#f3dc8e] shadow-sm">
                 <Sparkles className="w-4 h-4 text-[#d4af37]" />
-                <span>Abu Maaz Event Management & Wholesale Kirana</span>
+                <span>Abu Maa&apos;s Event Management & Wholesale Kirana</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white leading-tight">
@@ -140,7 +140,7 @@ export default function HomePage() {
                     </h3>
                     <p className="text-sm text-gray-600">
                       {language === "en"
-                        ? "We received your enquiry. Abu Maaz team will contact you within 15 minutes."
+                        ? "We received your enquiry. Abu Maa's team will contact you within 15 minutes."
                         : "आपकी पूछताछ प्राप्त हो गई है। हमारी टीम जल्द ही आपसे संपर्क करेगी।"}
                     </p>
                     <button
@@ -451,8 +451,8 @@ export default function HomePage() {
           </h2>
           <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
             {language === "en"
-              ? "Call Abu Maaz directly or message us on WhatsApp for custom menus, date availability, and wholesale rates."
-              : "कस्टम मेनू और तारीख की उपलब्धता के लिए अभी अबू माअज़ से संपर्क करें।"}
+              ? "Call Abu Maa's directly or message us on WhatsApp for custom menus, date availability, and wholesale rates."
+              : "कस्टम मेनू और तारीख की उपलब्धता के लिए अभी अबू मा'स से संपर्क करें।"}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a

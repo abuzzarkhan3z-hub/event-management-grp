@@ -7,11 +7,11 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 
 export const metadata: Metadata = {
-  title: "Abu Maaz Event Management Group | Bulk Catering & Kirana Supply",
+  title: "Abu Maa's Event Management Group | Bulk Catering & Kirana Supply",
   description:
     "Premium wedding catering, Walima, and wholesale Kirana grocery supply. Authentic Awadhi and Mughlai flavors, strict hygiene, and flawless event management.",
   keywords: [
-    "Abu Maaz Catering",
+    "Abu Maa's Catering",
     "Wedding Catering",
     "Walima Biryani",
     "Bulk Kirana Supply",

@@ -1,8 +1,8 @@
-# PRD: Abu Maaz Event Management Group Website
+# PRD: Abu Maa's Event Management Group Website
 
 **Version:** 1.0
 **Date:** 17 October 2026
-**Owner:** Abu Maaz Event Management Group
+**Owner:** Abu Maa's Event Management Group
 **Build tool:** Google Antigravity
 
 ---
@@ -10,7 +10,7 @@
 ## 1. Overview
 
 ### 1.1 Product Summary
-A responsive, mobile-first website and management system for **Abu Maaz Event Management Group**, a catering and grocery supply business in India. The website has two purposes:
+A responsive, mobile-first website and management system for **Abu Maa's Event Management Group**, a catering and grocery supply business in India. The website has two purposes:
 
 1. **Public website** to showcase services and capture enquiries/bookings.
 2. **Internal dashboards** to run the business: leads, bookings, menu, grocery stock, quotations, invoices, payments, and staff.
@@ -49,7 +49,7 @@ The business currently works offline (phone, word of mouth). This causes:
 | **Event Host (Customer)** | Family planning a wedding, engagement, walima, aqiqah, birthday | See menus and prices, get a quote fast, book a date |
 | **Grocery Buyer** | Individual, hotel, mess, or another caterer needing bulk groceries | Browse catalog, send a bulk order request, get a price |
 | **Corporate Client** | Company planning an office event | Packages, professional quotation, invoice |
-| **Owner / Admin** | Abu Maaz (business owner) | Manage everything from one place |
+| **Owner / Admin** | Abu Maa's (business owner) | Manage everything from one place |
 | **Manager / Staff** | Event supervisors, cooks, waiters | See assigned events and checklists |
 
 ---
@@ -207,7 +207,7 @@ The business currently works offline (phone, word of mouth). This causes:
 - Manager: assign staff, update event status.
 
 ### 5.5 Vendor Dashboard (Phase 4)
-- Purchase orders placed by Abu Maaz.
+- Purchase orders placed by Abu Maa's.
 - Delivery status and payment status.
 
 ---

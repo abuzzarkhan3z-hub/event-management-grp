@@ -8,7 +8,7 @@ export default function FloatingActions() {
   const { t } = useLanguage();
   const phone = "+917983319874";
   const whatsappUrl = `https://wa.me/917983319874?text=${encodeURIComponent(
-    "Hello Abu Maaz Event Group! I would like to enquire about your catering services and kirana supply."
+    "Hello Abu Maa's Event Group! I would like to enquire about your catering services and kirana supply."
   )}`;
 
   return (

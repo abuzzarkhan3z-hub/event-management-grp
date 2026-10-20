@@ -41,7 +41,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl sm:text-2xl font-serif font-bold tracking-tight text-white group-hover:text-[#f3dc8e] transition-colors">
-                Abu Maaz
+                Abu Maa&apos;s
               </span>
               <span className="text-xs uppercase tracking-widest text-[#d4af37] font-semibold">
                 Event & Kirana Group

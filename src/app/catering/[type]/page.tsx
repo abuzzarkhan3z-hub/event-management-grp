@@ -53,7 +53,7 @@ export default async function EventDetailPage({ params }: Props) {
             {displayName}
           </h1>
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-            Every celebration has its unique rhythm and expectations. Abu Maaz Event Group delivers end-to-end master cooking, live service staff, crockery, buffet counters, and pristine cleanup.
+            Every celebration has its unique rhythm and expectations. Abu Maa&apos;s Event Group delivers end-to-end master cooking, live service staff, crockery, buffet counters, and pristine cleanup.
           </p>
           <div className="pt-4 flex flex-wrap gap-4">
             <Link
